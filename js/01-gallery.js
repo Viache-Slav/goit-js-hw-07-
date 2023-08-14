@@ -20,6 +20,6 @@ for (let img of galleryItems) {
 
 galleryEll.addEventListener("click", (event) => {
     event.preventDefault();
-    const view = basicLightbox.create(`<img src="${event.target.dataset.source}" width="900" height="700">`);
-    view.show();
+    const instance = basicLightbox.create(`<img src="${event.target.dataset.source}" width="900" height="700">`);
+    instance.show();
 });
