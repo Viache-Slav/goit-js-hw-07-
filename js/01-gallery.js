@@ -20,6 +20,18 @@ for (let img of galleryItems) {
 
 galleryEll.addEventListener("click", (event) => {
     event.preventDefault();
-    const instance = basicLightbox.create(`<img src="${event.target.dataset.source}" width="900" height="700">`);
+    const instance = basicLightbox.create(`
+    <div class="modal">
+        <p>
+        <img src="${event.target.dataset.source}" width="900" height="700">
+        </p>
+    </div>
+    `);
     instance.show();
+    document.addEventListener('keydown', function (e) {
+        let keyCode = e.keyCode;
+        if (keyCode === 27) {
+            instance.close();
+        }
+    })
 });
